@@ -1,0 +1,8 @@
+.postbox {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgba(226, 190, 164, 0.6);
+  width: 25vw;
+  border-radius: 5px;
+  background-color: rgba(48, 49, 41, 0.1);
+}

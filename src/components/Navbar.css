@@ -1,0 +1,28 @@
+.navbaralign {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(48, 49, 41);
+}
+
+.navbar {
+  background-image: url("../images/Park\ Pals-logos_white.png");
+  padding: 0;
+  margin: 0;
+  width: 30vw;
+}
+
+.navbar > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.companylogo {
+  width: 180px;
+  height: 100px;
+}

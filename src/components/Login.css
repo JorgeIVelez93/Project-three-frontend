@@ -1,0 +1,21 @@
+.logincss {
+  background-image: url("../images/wallpaperflare.com_wallpaper\ \(1\).jpg");
+  background-size: cover;
+  background-position: 0, 0;
+  height: 120vh;
+  width: 100vw;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(150, 150, 150, 0.4);
+  border: 0.5px solid rgba(80, 80, 80, 0.8);
+  border-radius: 10%;
+  width: 20vw;
+  height: 50vh;
+  margin-left: 40vw;
+  margin-top: 20vh;
+}

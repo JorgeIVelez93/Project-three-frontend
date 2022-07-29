@@ -1,0 +1,17 @@
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 40vw;
+  height: 50vh;
+}
+.posts > img {
+  width: 40vw;
+  height: 30vh;
+}
+
+.userpage {
+  display: flex;
+  flex-direction: row;
+}
