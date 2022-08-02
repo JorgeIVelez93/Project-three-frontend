@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { post } from "../services/service";
+import CreatePostcss from "./CreatePost.css";
 
 const CreatePost = () => {
   const [content, setContent] = React.useState("");
@@ -19,16 +20,20 @@ const CreatePost = () => {
   };
   return (
     <div>
-      <form onSubmit={postContent}>
+      <form onSubmit={postContent} className="createpost">
         <label></label>
         <textarea
+          placeholder="What's on your mind?"
           rows="5"
-          columns="30"
+          columns="50"
+          maxlength="240"
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-        <button type="submit">Pen it</button>
+        <button type="submit" className="penbuttom">
+          Pen it
+        </button>
       </form>
     </div>
   );

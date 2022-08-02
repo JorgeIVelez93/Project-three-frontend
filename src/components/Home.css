@@ -6,7 +6,7 @@
   width: 100vw;
   padding: 0;
   margin: 0;
-  color: #fff;
+  color: #e6e3d3;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -23,15 +23,20 @@
   justify-content: center;
   align-items: center;
   width: 30vw;
-  height: 60vh;
-  border: 0px solid black;
-  background-color: rgba(166, 175, 195, 0.5);
+  height: 50vh;
+  border: 1px solid rgba(157, 193, 131, 0.3);
+  background-color: rgba(157, 193, 131, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 3%;
   padding: 0;
   margin: 0;
 }
 .landinginput > img {
   margin-top: 10vh;
+}
+.landinginput > img {
+  position: relative;
+  top: 5vh;
 }
 .signupinput {
   display: flex;
@@ -40,12 +45,17 @@
   align-items: center;
   padding-bottom: 10vh;
 }
+.signupinput > p {
+  /* padding: 0; */
+  margin-bottom: 4vh;
+  font-size: 2vh;
+}
 .signupinput > button {
   margin: 2vh 0;
 }
 /* CSS */
 .button-81 {
-  background-color: #fff;
+  background-color: #e6e3d3;
   border: 0 solid #e2e8f0;
   border-radius: 1.7rem;
   box-sizing: border-box;
@@ -58,7 +68,7 @@
   font-size: 1.1rem;
   font-weight: 600;
   line-height: 1;
-  padding: 1rem 1.6rem;
+  padding: 0.8rem 1rem;
   text-align: center;
   text-decoration: none #0d172a solid;
   text-decoration-thickness: auto;
@@ -70,7 +80,7 @@
 }
 
 .button-81:hover {
-  background-color: #1e293b;
+  background-color: #f3deff;
   color: #fff;
 }
 

@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import Usercss from "./Users.css";
 import CreatePost from "./CreatePost";
 import ViewPosts from "./ViewPosts";
+import Favorites from "./Favorites";
+import Footer from "./Footer";
 
 // key: Ugag0XoGygR4Ac2YSQIzHwGprPqtVuqT1F2bnxFb
 
@@ -33,26 +35,54 @@ const User = () => {
   };
 
   return (
-    <div>
-      <Navbar />
-      <div className="userpage">
-        <h3>Pens</h3>
-        <CreatePost />
-        <ViewPosts />
-        <div>
-          <h2>News</h2>
-          {events.data &&
-            events.data.slice(0, 5).map(function (news) {
-              return (
-                <div className="posts">
-                  <p>{news.abstract}</p>
-                  <img src={news.image.url} alt={news.image.altText} />
-                  <a href={news.url}>{news.url}</a>
-                </div>
-              );
-            })}
+    <div className="usercssbody">
+      <div>
+        <Navbar />
+      </div>
+      <div className="usercontainer">
+        <div className="userpage">
+          <div className="postsection">
+            <h2>Pens</h2>
+            <CreatePost />
+            <br></br>
+            <div>
+              <ViewPosts />
+            </div>
+          </div>
+          <div className="favoritessection">
+            <h2>Favorite Parks</h2>
+            <Favorites />
+          </div>
+          <div className="newssection">
+            <h2>News</h2>
+            {events.data &&
+              events.data.slice(0, 5).map(function (news) {
+                return (
+                  <div
+                    className="news"
+                    style={{
+                      backgroundImage: `url(${news.image.url})`,
+                      backgroundSize: "cover",
+                      position: "0",
+                    }}
+                  >
+                    <a
+                      style={{
+                        textDecoration: "none",
+                        color: "blue",
+                        textAlign: "center",
+                      }}
+                      href={news.url}
+                    >
+                      <p>{news.title}</p>
+                    </a>
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

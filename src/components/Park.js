@@ -2,6 +2,10 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { post } from "../services/service";
+import parkcss from "./Park.css";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import likeLogo from "../images/icons8-heart-48.png";
 
 const Park = () => {
   const params = useParams();
@@ -31,36 +35,52 @@ const Park = () => {
   };
   const favorite = async (pickPark) => {
     console.log(pickPark);
-    setParkId(pickPark.parkCode);
-    setbackgroundImg(pickPark.images[0].url);
-    setparkName(pickPark.name);
+    // setParkId(pickPark.parkCode);
+    // setbackgroundImg(pickPark.images[0].url);
+    // setparkName(pickPark.name);
 
     let response = await post("/users/fav-park", {
-      postId: parkId,
-      backgroundImg: backgroundImg,
-      parkName: parkName,
+      postId: pickPark.parkCode,
+      backgroundImg: pickPark.images[0].url,
+      parkName: pickPark.name,
     });
     console.log(response);
   };
 
   //   console.log(params.park);
   return (
-    <div>
+    <div className="favoriteparks">
+      <Navbar />
       {park &&
         park.map(function (parkInfo) {
           return (
-            <div style={{ backgroundImage: `url(${parkInfo.images[0].url})` }}>
-              <h1>{parkInfo.fullName}</h1>;<p>{parkInfo.addresses[0].city}</p>;
-              <p>{parkInfo.addresses[0].stateCode}</p>;
+            <div
+              className="singlepark"
+              style={{
+                backgroundImage: `url(${parkInfo.images[0].url})`,
+                backgroundSize: "cover",
+                backgroundPosition: "0",
+              }}
+            >
+              <h1>{parkInfo.fullName}</h1>;
+              <h2>
+                {parkInfo.addresses[0].city}, {parkInfo.addresses[0].stateCode}
+              </h2>
               <p>{parkInfo.description}</p>
               <p>{parkInfo.weatherInfo}</p>;
-              <button type="button" onClick={() => favorite(park[0])}>
+              <img
+                src={likeLogo}
+                alt="favorites"
+                onClick={() => favorite(park[0])}
+              />
+              {/* <button type="button" onClick={() => favorite(park[0])}>
                 Favorite
-              </button>
+              </button> */}
               ;
             </div>
           );
         })}
+      <Footer />
     </div>
   );
 };

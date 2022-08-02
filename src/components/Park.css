@@ -1,0 +1,11 @@
+.favoriteparks {
+  padding: 0;
+  margin: 0;
+}
+.singlepark {
+  width: 100vw;
+  height: 100vh;
+}
+.singlepark > h1 {
+  margin: 0;
+}

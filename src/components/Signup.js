@@ -3,6 +3,10 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { post } from "../services/service";
 import signupcss from "./Signup.css";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
+import Hamburger from "./Hamburger";
+import logo from "../images/Park Pals-logos_white.png";
 
 const Signup = () => {
   const [firstName, setFirstName] = React.useState("");
@@ -54,91 +58,99 @@ const Signup = () => {
   };
 
   return (
-    <div className="signupcss">
-      <form onSubmit={createUser} className="signupform">
-        <img
-          src={imgUrl}
-          alt="profile"
-          style={{ width: "100", height: "100" }}
-        />
+    <div className="signupmain">
+      <nav className="signupnav">
+        <Hamburger />
 
-        <div className="nameinput">
-          <div className="nameinputbox">
-            <label>First Name</label>
-            <input
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
+        <img src={logo} alt="logo" className="signuplogo" />
+      </nav>
+      <div className="signupformbox">
+        <form onSubmit={createUser} className="signupform">
+          <img src={imgUrl} alt="profile" />
+          <div className="nameinput">
+            <div className="nameinputbox">
+              <label>First Name</label>
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+              />
+            </div>
+            <div className="nameinputbox">
+              <label>Last Name</label>
+              <input
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+              />
+            </div>
           </div>
-          <div className="nameinputbox">
-            <label>Last Name</label>
-            <input
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
+          <div className="ageemail">
+            <div className="ageemailbox">
+              <label>Age</label>
+              <input
+                type="text"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+              />
+            </div>
+            <div className="ageemailbox">
+              <label>Email</label>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
           </div>
-        </div>
-        <div className="ageemail">
-          <div className="ageemailbox">
-            <label>Age</label>
-            <input
-              type="text"
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
-            />
-          </div>
-          <div className="ageemailbox">
-            <label>Email</label>
-            <input
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-        </div>
 
-        <label>Username</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <div className="passwordoconfirm">
-          <div className="passwordoconfirmbox">
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="passwordoconfirmbox">
-            <label>Confirm Password</label>
-            <input
-              type="password"
-              value={password2}
-              onChange={(e) => setPassword2(e.target.value)}
-            />
-          </div>
-        </div>
-        <div className="profileimg">
-          <label>Profile Image</label>
+          <label>Username</label>
           <input
-            type="file"
-            onChange={handleFileUpload}
-            placeholder="Upload File"
+            className="usernamecss"
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
-        </div>
-        <br></br>
-        <div className="">
-          <button className="submitbutton" type="submit" disabled={loading}>
-            Create Account
-          </button>
-        </div>
-        <h3>{status}</h3>
-      </form>
+          <div className="passwordoconfirm">
+            <div className="passwordoconfirmbox">
+              <label>Password</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="passwordoconfirmbox">
+              <label>Confirm Password</label>
+              <input
+                type="password"
+                value={password2}
+                onChange={(e) => setPassword2(e.target.value)}
+              />
+            </div>
+          </div>
+          <br></br>
+          <div className="profileimg">
+            <label>Profile Image</label>
+
+            <input
+              type="file"
+              onChange={handleFileUpload}
+              placeholder="Upload File"
+            />
+          </div>
+          <br></br>
+          <div className="">
+            <button className="submitbutton" type="submit" disabled={loading}>
+              Create Account
+            </button>
+          </div>
+          <h3>{status}</h3>
+        </form>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

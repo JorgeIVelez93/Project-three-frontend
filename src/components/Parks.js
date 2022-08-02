@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import parkscss from "./Parks.css";
+import Navbar from "./Navbar";
 
 const Parks = () => {
   const [parks, setParks] = React.useState([]);
@@ -45,37 +47,69 @@ const Parks = () => {
   };
 
   return (
-    <div>
-      <button onClick={(e) => filterArrByLetter("a", "d")} value="1">
-        A-D
-      </button>
-      <button onClick={(e) => filterArrByLetter("e", "h")} value="2">
-        E-H
-      </button>
-      <button onClick={(e) => filterArrByLetter("i", "l")} value="3">
-        I-L
-      </button>
-      <button onClick={(e) => filterArrByLetter("m", "p")} value="4">
-        M-P
-      </button>
-      <button onClick={(e) => filterArrByLetter("q", "t")} value="5">
-        Q-T
-      </button>
-      <button onClick={(e) => filterArrByLetter("u", "z")} value="6">
-        U-Z
-      </button>
-      <button onClick={(e) => filterArrByLetter("a", "z")} value="7">
-        View All
-      </button>
+    <div className="parkscssdiv">
+      <Navbar />
+      <br></br>
+      <div className="parklistbuttons">
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("a", "d")}
+          value="1"
+        >
+          A-D
+        </button>
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("e", "h")}
+          value="2"
+        >
+          E-H
+        </button>
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("i", "l")}
+          value="3"
+        >
+          I-L
+        </button>
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("m", "p")}
+          value="4"
+        >
+          M-P
+        </button>
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("q", "t")}
+          value="5"
+        >
+          Q-T
+        </button>
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("u", "z")}
+          value="6"
+        >
+          U-Z
+        </button>
+        <button
+          className="parksbutton"
+          onClick={(e) => filterArrByLetter("a", "z")}
+          value="7"
+        >
+          View All
+        </button>
+      </div>
       {parks &&
         parks.map(function (park) {
           return (
-            <div>
-              <Link to={`/park/${park.parkCode}`}>
+            <div className="parklistmap">
+              <Link to={`/park/${park.parkCode}`} style={{ color: "#F3DEFF" }}>
                 <p>{park.fullName}</p>
               </Link>
 
-              <p>
+              <p style={{ color: "#F3DEFF" }}>
                 {park.addresses[0].city} {park.addresses[0].stateCode}
               </p>
             </div>

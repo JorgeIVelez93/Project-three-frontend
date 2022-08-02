@@ -1,8 +1,29 @@
 .postbox {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   border: 0.5px solid rgba(226, 190, 164, 0.6);
-  width: 25vw;
+  width: 400px;
+  height: 275px;
   border-radius: 5px;
-  background-color: rgba(48, 49, 41, 0.1);
+  background-color: rgba(157, 193, 131, 0.35);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.postbox > p {
+  font-size: 12px;
+  text-align: left;
+}
+.postbox > button {
+  width: 50px;
+}
+.postprofilepic {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-top: 3.5vh;
+}
+.userdashboard {
+  height: 100vh;
 }

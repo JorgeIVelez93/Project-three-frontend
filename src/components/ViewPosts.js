@@ -4,6 +4,8 @@ import Viewpostscss from "./ViewPosts.css";
 
 const ViewPosts = () => {
   const [posts, setPosts] = React.useState([]);
+  const username = localStorage.getItem("username");
+  const profilePic = localStorage.getItem("profilePic");
 
   const getPosts = async () => {
     let response = await get("/posts/user-pen");
@@ -19,12 +21,23 @@ const ViewPosts = () => {
     let response = await post(`/posts/likes/${postId}`);
   };
   return (
-    <div>
+    <div className="userdashboard">
       {posts &&
-        posts.map(function (post) {
+        posts.slice(0, 3).map(function (post) {
           return (
             <div className="postbox">
+              <p>
+                {" "}
+                <img
+                  src={profilePic}
+                  alt="profile pic"
+                  className="postprofilepic"
+                />
+                {username} {Date(post.createdAt).slice(0, 15)}
+              </p>
               <p>{post.content}</p>
+
+              <p>{post.likes.length}</p>
               <button
                 onClick={() => {
                   addLike(post._id);
@@ -32,8 +45,6 @@ const ViewPosts = () => {
               >
                 Like
               </button>
-              <p>{post.likes.length}</p>
-              <p>{Date(post.createdAt).slice(0, 15)}</p>
             </div>
           );
         })}

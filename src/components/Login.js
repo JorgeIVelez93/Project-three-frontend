@@ -57,7 +57,7 @@ const Login = () => {
           {/* <Link to={`/user/${username}`}>Login</Link> */}Login
         </button>
       </form>
-      <h1>Welcome {status} </h1>
+      <h1> {status} </h1>
     </div>
   );
 };
