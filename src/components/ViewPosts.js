@@ -1,5 +1,5 @@
 import React from "react";
-import { get, post } from "../services/service";
+import { get, post, remove } from "../services/service";
 import Viewpostscss from "./ViewPosts.css";
 
 const ViewPosts = () => {
@@ -13,6 +13,7 @@ const ViewPosts = () => {
     setPosts(response.data);
   };
 
+  // console.log(posts[0]._id);
   React.useEffect(function () {
     getPosts();
   }, []);
@@ -20,30 +21,53 @@ const ViewPosts = () => {
   const addLike = async (postId) => {
     let response = await post(`/posts/likes/${postId}`);
   };
+  const removeLike = async (postId) => {
+    let response = await post(`/posts/remove-like/${postId}`);
+  };
+
+  const deletePost = async (postId) => {
+    let response = await remove(`/posts/delete-post/${postId}`);
+  };
   return (
     <div className="userdashboard">
       {posts &&
         posts.slice(0, 3).map(function (post) {
           return (
             <div className="postbox">
-              <p>
+              <p className="userPTag">
                 {" "}
                 <img
                   src={profilePic}
                   alt="profile pic"
                   className="postprofilepic"
                 />
-                {username} {Date(post.createdAt).slice(0, 15)}
+                {username}: {Date(post.createdAt).slice(0, 15)}
               </p>
-              <p>{post.content}</p>
-
-              <p>{post.likes.length}</p>
+              <p className="contentPTag">{post.content}</p>
+              <p className="postLikes">Up Votes {post.likes.length}</p>
               <button
+                className="upvote"
                 onClick={() => {
                   addLike(post._id);
                 }}
               >
-                Like
+                Upvote
+              </button>
+              <button
+                className="downvote"
+                onClick={() => {
+                  removeLike(post._id);
+                }}
+              >
+                Downvote
+              </button>
+              <button
+                className="delete"
+                onClick={() => {
+                  deletePost(post._id);
+                }}
+              >
+                Delete
               </button>
             </div>
           );

@@ -19,6 +19,7 @@ const Favorites = () => {
 
   return (
     <div>
+      <div></div>
       {favParks &&
         favParks.map(function (fav) {
           return (
@@ -30,7 +31,14 @@ const Favorites = () => {
                 position: "0,0",
               }}
             >
-              <Link to="">{fav.parkName}</Link>
+              <p className="favparklink">
+                <Link
+                  style={{ textDecoration: "none", color: "#E6E3D3" }}
+                  to=""
+                >
+                  {fav.parkName}
+                </Link>
+              </p>
             </div>
           );
         })}

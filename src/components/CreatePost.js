@@ -19,14 +19,14 @@ const CreatePost = () => {
     }
   };
   return (
-    <div>
-      <form onSubmit={postContent} className="createpost">
+    <div className="createpost">
+      <form onSubmit={postContent}>
         <label></label>
         <textarea
           placeholder="What's on your mind?"
           rows="5"
           columns="50"
-          maxlength="240"
+          maxLength={"240"}
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}

@@ -14,6 +14,7 @@ import Parks from "./components/Parks";
 import Park from "./components/Park";
 import ViewAllPosts from "./components/ViewAllPosts";
 import Sources from "./components/Sources";
+import Profile from "./components/Profile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/park/:park" element={<Park />} />
         <Route path="/view-all" element={<ViewAllPosts />} />
         <Route path="/sources" element={<Sources />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/*" element={<Failure />} />
       </Routes>
     </div>

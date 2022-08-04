@@ -1,11 +1,65 @@
 .favoriteparks {
-  padding: 0;
-  margin: 0;
+  display: flex;
+  flex-direction: row;
 }
 .singlepark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  background-color: #e6e3d3;
+}
+.singlepark h1 {
+  font-family: "Pangolin", cursive;
+  text-align: center;
+}
+.singlepark h2 {
+  font-family: "Pangolin", cursive;
+  text-align: center;
+}
+.singlepark p {
+  font-family: "Pangolin", cursive;
+  text-align: center;
+  line-height: 24px;
+  width: 600px;
+}
+.viewParkBackground {
+  width: 50%;
+}
+.parkscontainer {
   width: 100vw;
   height: 100vh;
 }
-.singlepark > h1 {
-  margin: 0;
+.favorite {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 01rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  /* position: relative;
+  bottom: 15px;
+  left: 270px; */
+}
+.favorite:hover {
+  background-color: #da012d;
+  color: #272727;
 }

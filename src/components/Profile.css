@@ -1,0 +1,28 @@
+.profileContainer {
+  border: 1px solid rgba(45, 58, 83, 1);
+  background-color: rgba(45, 58, 83, 1);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 5px;
+  width: 500px;
+  height: 450px;
+  position: relative;
+  top: 85px;
+}
+.profileContainer img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #e6e3d3;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.profilediv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.profilepage {
+  background-image: url("../images/everglades.jpg");
+  background-size: cover;
+  height: 100vh;
+}

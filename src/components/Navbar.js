@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import navbarcss from "./Navbar.css";
-import logo from "../images/parkpalsorange.jpeg";
+import logo from "../images/Park Pals-1.png";
 import { useNavigate } from "react-router-dom";
 import Hamburger from "./Hamburger";
 
@@ -20,13 +20,9 @@ const Navbar = () => {
       <div>
         <Hamburger />
       </div>
-      <div className="companylogo">
-        <p>Park Pals</p>
-      </div>
-      <div className="navbar">
-        <li>
-          <img src={profilePic} alt="profile pic" className="profilepic" />
-        </li>
+      <h1 className="parkpals">Park Pals</h1>
+      <div className="navbarlogo">
+        <img src={logo} alt="company logo" />
       </div>
     </div>
   );

@@ -29,3 +29,17 @@ export const post = async (route, body) => {
     console.error(err.message);
   }
 };
+export const remove = async (route) => {
+  try {
+    let token = localStorage.getItem("token");
+    console.log(token);
+    let response = await axios.delete(baseUrl + route, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response;
+  } catch (err) {
+    console.error(err.message);
+  }
+};

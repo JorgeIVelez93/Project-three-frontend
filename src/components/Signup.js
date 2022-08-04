@@ -6,7 +6,9 @@ import signupcss from "./Signup.css";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Hamburger from "./Hamburger";
-import logo from "../images/Park Pals-logos_white.png";
+import logo from "../images/Park Pals-1.png";
+import evergreen from "../images/icons8-evergreen-75.png";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [firstName, setFirstName] = React.useState("");
@@ -19,14 +21,16 @@ const Signup = () => {
   const [status, setStatus] = React.useState("");
   const [imgUrl, setImgUrl] = React.useState("");
   const [loading, setLoading] = React.useState(false);
+  let navigate = useNavigate();
 
   const createUser = async (e) => {
     e.preventDefault();
     if (!username || !password) {
       setStatus("Please fill out username and password");
-    }
-    if (password !== password2) {
+    } else if (password !== password2) {
       setStatus("Passwords do not match.");
+    } else if (password.length < 7) {
+      setStatus("Password length must be seven or more characters.");
     } else {
       setFirstName("");
       setLastName("");
@@ -44,7 +48,11 @@ const Signup = () => {
         age: age,
         profilePic: imgUrl,
       });
+      // localStorage.setItem("token", response.data.token);
+      // localStorage.setItem("username", response.data.username);
+      // localStorage.setItem("profilePic", response.data.profilePic);
       console.log(response.data);
+      sendToDash();
     }
   };
   const handleFileUpload = async (e) => {
@@ -57,16 +65,25 @@ const Signup = () => {
     setLoading(false);
   };
 
+  const sendToDash = () => {
+    navigate(`/login`);
+  };
+
   return (
     <div className="signupmain">
-      <nav className="signupnav">
-        <Hamburger />
+      <Navbar />
 
-        <img src={logo} alt="logo" className="signuplogo" />
-      </nav>
       <div className="signupformbox">
         <form onSubmit={createUser} className="signupform">
-          <img src={imgUrl} alt="profile" />
+          {imgUrl ? (
+            <img src={imgUrl} alt="profile" />
+          ) : (
+            <img
+              src={evergreen}
+              alt="profile"
+              style={{ width: "75px", height: "75px" }}
+            />
+          )}
           <div className="nameinput">
             <div className="nameinputbox">
               <label>First Name</label>
@@ -92,6 +109,7 @@ const Signup = () => {
                 type="text"
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
+                required="true"
               />
             </div>
             <div className="ageemailbox">
@@ -148,9 +166,9 @@ const Signup = () => {
           <h3>{status}</h3>
         </form>
       </div>
-      <div>
+      {/* <div>
         <Footer />
-      </div>
+      </div> */}
     </div>
   );
 };

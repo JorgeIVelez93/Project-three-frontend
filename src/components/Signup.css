@@ -3,47 +3,42 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0;
-  margin: 0;
-  height: 97vh;
-  /* background-image: url("../images/everglades.jpg");
-  background-size: cover;
-  background-position: 0, 0; */
+  height: 100vh;
+  width: 100vw;
   background-color: #e6e3d3;
   color: #e6e3d3;
+  background-image: url("../images/wallpaperflare.com_wallpaper\ \(1\).jpg");
+  background-size: cover;
+  background-position: 0, 0;
+  /* filter: blur(0px); */
 }
-/* .signupcss {
-  height: 28vh;
-  width: 100vw;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 
 .signupform {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
-  /* line-height: 6vh; */
-  border: 1px solid rgba(157, 193, 131, 0.3);
-  background-color: rgba(157, 193, 131, 1);
-  border-radius: 3%;
+  background-color: rgba(45, 58, 83, 1);
+  border: 1px solid rgba(45, 58, 83, 0.8, 0.9);
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 5px;
   padding: 0;
-  margin-top: 10vh;
-  width: 30vw;
-  height: 65vh;
-  color: #e6e3d3;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  margin-right: 60px;
+  height: 450px;
+  width: 500px;
+  color: #fff;
+  padding: 10px 0;
 }
+
 .signupform > img {
-  width: 60px;
+  width: 80px;
   height: 80px;
   border-radius: 50%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  margin-top: 5vh;
+  border: 2px solid #fff;
+  /* margin-top: 0; */
 }
 .nameinput {
   display: flex;
@@ -55,12 +50,13 @@
   padding: 1vh 1vw;
 }
 .nameinputbox > input {
-  border-bottom: 1px solid #272727;
+  border-bottom: 1px double #e6e3d3;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
   background-color: transparent;
-  text-align: center;
+  text-align: left;
+  color: #e6e3d3;
 }
 .ageemail {
   display: flex;
@@ -68,24 +64,25 @@
 .ageemailbox {
   display: flex;
   flex-direction: column;
-
   padding: 1vh 1vw;
 }
 .ageemailbox > input {
-  border-bottom: 1px solid #272727;
+  border-bottom: 1px solid #e6e3d3;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
   background-color: transparent;
-  text-align: center;
+  text-align: left;
+  color: #e6e3d3;
 }
 .usernamecss {
-  border-bottom: 1px solid #272727;
+  border-bottom: 1px solid #e6e3d3;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
   background-color: transparent;
-  text-align: center;
+  text-align: left;
+  color: #e6e3d3;
 }
 .passwordoconfirm {
   display: flex;
@@ -96,11 +93,12 @@
   padding: 1vh 1vw;
 }
 .passwordoconfirmbox > input {
-  border-bottom: 1px solid #272727;
+  border-bottom: 1px solid #e6e3d3;
   border-top: hidden;
   border-right: hidden;
   border-left: hidden;
   background-color: transparent;
+  color: #e6e3d3;
 }
 .profileimg {
   display: flex;
@@ -111,7 +109,7 @@
 .profileimg > input::file-selector-button {
   background-color: #e6e3d3;
   border: 0 solid #e2e8f0;
-  border-radius: 1.7rem;
+  border-radius: 0.4rem;
   box-sizing: border-box;
   color: #0d172a;
   cursor: pointer;
@@ -123,7 +121,7 @@
   font-weight: 6s00;
   line-height: 1;
   padding: 0.4rem 0.4rem;
-  text-align: center;
+  text-align: left;
   text-decoration: none #0d172a solid;
   text-decoration-thickness: auto;
   transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,7 +137,7 @@
 .submitbutton {
   background-color: #e6e3d3;
   border: 0 solid #e2e8f0;
-  border-radius: 1.7rem;
+  border-radius: 0.4rem;
   box-sizing: border-box;
   color: #0d172a;
   cursor: pointer;
@@ -151,7 +149,7 @@
   font-weight: 600;
   line-height: 1;
   padding: 1rem 1.6rem;
-  text-align: center;
+  text-align: left;
   text-decoration: none #0d172a solid;
   text-decoration-thickness: auto;
   transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
@@ -170,36 +168,9 @@
   font-size: 3vh;
   text-decoration: none;
 }
-/* .signuplogo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid rgba(157, 193, 131, 0.35);
-  background-color: rgba(157, 193, 131, 1);
-  border-radius: 3%;
-}
-.signuplogo > p {
-  margin-top: 0;
-}
-*/
-.signuplogo {
-  width: 250px;
-  height: 24vh;
-}
-/* .signupnav {
-  display: flex;
-  justify-content: row;
-  justify-content: space-around;
-  align-items: center;
-} */
+
 .signupformbox {
-  height: 100vh;
-}
-.signupform {
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  height: 60vh;
-  margin-bottom: 10vh;
+  height: 900px;
 }
 
 .profilepic {
@@ -213,12 +184,17 @@
   border: 1px solid #272727;
 }
 
-.signupnav {
+/* .signupnav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  background-color: rgba(157, 193, 131, 1);
-  height: 13vh;
+  background-color: #013220;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 100vw;
+  height: 100px;
+} */
+.signuplogo {
+  width: 200px;
+  height: 100px;
 }

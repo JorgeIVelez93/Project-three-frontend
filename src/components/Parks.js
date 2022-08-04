@@ -13,7 +13,7 @@ const Parks = () => {
     url: "https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks",
     params: { limit: "467" },
     headers: {
-      "X-Api-Key": "Ugag0XoGygR4Ac2YSQIzHwGprPqtVuqT1F2bnxFb",
+      "X-Api-Key": process.env.REACT_APP_PARK_API,
       "X-RapidAPI-Key": "fc5ddf5126msh1d48379b21e9d23p19d5aajsn82e9df5dbeec",
       "X-RapidAPI-Host": "jonahtaylor-national-park-service-v1.p.rapidapi.com",
     },
@@ -43,7 +43,6 @@ const Parks = () => {
       return parkName.fullName === parkByLetter;
     });
     setParks(parkByLetter);
-    console.log(parkByLetter);
   };
 
   return (

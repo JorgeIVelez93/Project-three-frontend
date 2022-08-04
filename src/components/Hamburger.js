@@ -18,6 +18,10 @@ const Hamburger = () => {
     navigate("/login");
   };
 
+  // const dashboardRedirect = () => {
+  //   navigate(`/user/${username}`);
+  // };
+
   var styles = {
     bmBurgerButton: {
       position: "fixed",
@@ -27,7 +31,7 @@ const Hamburger = () => {
       top: "36px",
     },
     bmBurgerBars: {
-      background: "rgba(40, 35, 29, 0.35)",
+      background: "#E6E3D3",
     },
     bmBurgerBarsHover: {
       background: "#e6e3d3",
@@ -85,15 +89,13 @@ const Hamburger = () => {
         {username}
       </Link>
       <br></br>
-      <Link to="/" className="burgerLinks">
+      <Link to={`/user/${username}`} className="burgerLinks">
         Dashboard
       </Link>
       <Link to="/parks" className="burgerLinks">
         View Parks
       </Link>
-      <Link to="/events" className="burgerLinks">
-        See Events
-      </Link>
+
       <Link to="/view-all" className="burgerLinks">
         View Global Pens
       </Link>
@@ -101,12 +103,22 @@ const Hamburger = () => {
         Settings
       </Link>
       <br></br>
-      <Link to="/login" onClick={userSignout} className="burgerLinks">
-        Sign Out
-      </Link>
-      {/* <button type="button" onClick={userSignout}>
-        Sign Out
-      </button> */}
+      {username && (
+        <Link to="/login" onClick={userSignout} className="burgerLinks">
+          Sign Out
+        </Link>
+      )}
+      {!username && (
+        <Link to="/" className="burgerLinks">
+          Sign Up
+        </Link>
+      )}
+      <br />
+      {!username && (
+        <Link to="/login" className="burgerLinks">
+          Login
+        </Link>
+      )}
     </Menu>
   );
 };

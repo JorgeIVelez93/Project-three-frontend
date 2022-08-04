@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import logincss from "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { post } from "../services/service";
+import logo from "../images/Park Pals-1.png";
 
 const Login = () => {
   const [username, setUsername] = React.useState("");
@@ -14,10 +16,10 @@ const Login = () => {
   const userLogin = async (e) => {
     e.preventDefault();
     if (!username || !password) {
-      setStatus("Please fill out username and password");
+      setStatus("Username or password incorrect.");
     } else {
       try {
-        let response = await axios.post("http://localhost:4000/users/login", {
+        let response = await post("/users/login", {
           username: username,
           password: password,
         });
@@ -29,7 +31,7 @@ const Login = () => {
         navigate(`/user/${response.data.username}`);
       } catch (err) {
         console.error(err.message);
-        setStatus("Please fill out username and password");
+        setStatus("Username or password incorrect.");
       }
     }
   };
@@ -41,6 +43,7 @@ const Login = () => {
     <div className="logincss">
       <Navbar />
       <form onSubmit={userLogin} className="login">
+        <img src={logo} alt="company logos" className="loginlogo" />
         <label>Username</label>
         <input
           type="text"
@@ -53,11 +56,12 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">
-          {/* <Link to={`/user/${username}`}>Login</Link> */}Login
+        <br></br>
+        <button className="loginButton" type="submit">
+          Login
         </button>
+        <p> {status} </p>
       </form>
-      <h1> {status} </h1>
     </div>
   );
 };

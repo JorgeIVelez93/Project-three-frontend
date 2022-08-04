@@ -36,53 +36,50 @@ const User = () => {
 
   return (
     <div className="usercssbody">
-      <div>
-        <Navbar />
-      </div>
-      <div className="usercontainer">
-        <div className="userpage">
-          <div className="postsection">
-            <h2>Pens</h2>
-            <CreatePost />
-            <br></br>
-            <div>
-              <ViewPosts />
-            </div>
-          </div>
-          <div className="favoritessection">
-            <h2>Favorite Parks</h2>
-            <Favorites />
-          </div>
-          <div className="newssection">
-            <h2>News</h2>
-            {events.data &&
-              events.data.slice(0, 5).map(function (news) {
-                return (
-                  <div
-                    className="news"
+      <Navbar />
+      <div className="userpage">
+        <div className="postsection">
+          <h2>Personal Pens</h2>
+
+          <CreatePost />
+
+          <ViewPosts />
+        </div>
+        <div className="favoritessection">
+          <h2>Favorite Parks</h2>
+          <Favorites />
+        </div>
+        <div className="newssection">
+          <h2>News</h2>
+          {events.data &&
+            events.data.slice(0, 5).map(function (news) {
+              return (
+                <div
+                  className="news"
+                  style={{
+                    backgroundImage: `url(${news.image.url})`,
+                    backgroundSize: "cover",
+                    position: "0",
+                  }}
+                >
+                  <a
                     style={{
-                      backgroundImage: `url(${news.image.url})`,
-                      backgroundSize: "cover",
-                      position: "0",
+                      textDecoration: "none",
+                      color: "blue",
+                      textAlign: "center",
                     }}
+                    href={news.url}
                   >
-                    <a
-                      style={{
-                        textDecoration: "none",
-                        color: "blue",
-                        textAlign: "center",
-                      }}
-                      href={news.url}
-                    >
-                      <p>{news.title}</p>
-                    </a>
-                  </div>
-                );
-              })}
-          </div>
+                    <p>{news.title}</p>
+                  </a>
+                </div>
+              );
+            })}
         </div>
       </div>
-      <Footer />
+      <div className="footerUser">
+        <Footer />
+      </div>
     </div>
   );
 };

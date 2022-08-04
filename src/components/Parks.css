@@ -1,8 +1,9 @@
 .parkscssdiv {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   text-align: center;
   background-color: #e6e3d3;
 }
@@ -12,7 +13,7 @@
 .parksbutton {
   background-color: #fff;
   border: 0 solid #e2e8f0;
-  border-radius: 1.7rem;
+  border-radius: 0.2rem;
   box-sizing: border-box;
   color: #0d172a;
   cursor: pointer;
@@ -40,9 +41,11 @@
 .parklistmap {
   border: 1px solid rgba(157, 193, 131, 0.55);
   width: 300px;
-  margin: 1vh 0;
+  height: 100px;
+  margin: 10px 10px;
   border-radius: 5px;
-  background-color: rgba(157, 193, 131, 0.55);
+  background-color: rgba(45, 58, 83, 1);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   text-decoration: none;
+  color: #e6e3d3;
 }
