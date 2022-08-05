@@ -22,6 +22,8 @@
   color: #fff;
   position: relative;
   right: 30px;
+  font-family: "Pangolin", cursive;
+  line-height: 30px;
 }
 .loginlogo {
   height: 85px;
@@ -46,9 +48,7 @@
   color: #0d172a;
   cursor: pointer;
   display: inline-block;
-  font-family: "Basier circle", -apple-system, system-ui, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Pangolin", cursive;
   font-size: 0.8rem;
   font-weight: 600;
   line-height: 1;

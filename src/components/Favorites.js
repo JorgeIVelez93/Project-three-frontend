@@ -16,7 +16,7 @@ const Favorites = () => {
   React.useEffect(function () {
     getFavs();
   }, []);
-
+  console.log(favParks);
   return (
     <div>
       <div></div>
@@ -34,7 +34,7 @@ const Favorites = () => {
               <p className="favparklink">
                 <Link
                   style={{ textDecoration: "none", color: "#E6E3D3" }}
-                  to=""
+                  to={`/park/${fav.parkCode}`}
                 >
                   {fav.parkName}
                 </Link>

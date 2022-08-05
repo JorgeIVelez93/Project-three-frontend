@@ -1,11 +1,13 @@
 import React from "react";
-import { get } from "../services/service";
+import { get, remove } from "../services/service";
 import profileCSS from "./Profile.css";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const [uProfile, setUProfile] = React.useState({});
   const [flag, setFlag] = React.useState(false);
+  let navigate = useNavigate();
 
   const getProfile = async () => {
     let response = await get(`/users/profile`);
@@ -17,25 +19,37 @@ const Profile = () => {
   }, []);
 
   const deleteProfile = async () => {
-    let response = await get(`/delete-user/${uProfile}`);
+    let response = await remove(`/users/delete-user/${uProfile._id}`);
+    localStorage.clear();
+    navigate("/login");
   };
-  console.log(flag);
+  console.log(uProfile._id);
   return (
     <div className="profilepage">
       <Navbar />
       <div className="profilediv">
         <div className="profileContainer">
           <img src={uProfile.profilePic} alt="profile pic" />
-          <h1>{uProfile.username}</h1>
-          <h2>{uProfile.firstName}</h2>
-          <h2>{uProfile.lastName}</h2>
-          <h3>{uProfile.age}</h3>
+          <h1 style={{ fontSize: "20px" }}>Username: {uProfile.username}</h1>
+          <h2 style={{ fontSize: "14px" }}>
+            Name: {uProfile.firstName} {uProfile.lastName}
+          </h2>
 
-          {flag === false ? (
-            <button onClick={() => setFlag(!flag)}>Confirm delete</button>
-          ) : (
-            <button onClick={deleteProfile}>Delete Profile</button>
-          )}
+          <h3 style={{ fontSize: "14px" }}>Age: {uProfile.age}</h3>
+
+          <p>
+            {" "}
+            Delete profile <br></br>
+            {flag === false ? (
+              <button onClick={() => setFlag(!flag)} className="deleteButton">
+                Confirm delete
+              </button>
+            ) : (
+              <button onClick={deleteProfile} className="deleteButton">
+                Delete Profile
+              </button>
+            )}
+          </p>
         </div>
       </div>
     </div>

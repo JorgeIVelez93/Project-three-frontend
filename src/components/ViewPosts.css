@@ -1,48 +1,62 @@
 .postbox {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: flex-start;
   border: 0.5px solid rgba(226, 190, 164, 0.6);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #e2e8f0;
   border-radius: 5px;
   border: none;
-  margin-top: 50px;
-  width: 325px;
-  height: 200px;
+  width: 350px;
+  height: 180px;
   color: rgba(45, 58, 83, 0.8);
+  margin-top: 10px;
 }
-
+.postbox > p {
+  margin-left: 10px;
+}
 .postprofilepic {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border: 1px solid #e2e8f0;
   border-radius: 50%;
-  margin-top: 120px;
-  margin-left: 5px;
+  margin-left: 2px;
+  margin-bottom: 2px;
 }
 
 .userPTag {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   font-size: 10px;
   font-weight: 600;
-  position: relative;
-  bottom: 22px;
-  text-decoration: underline;
+  height: 60px;
+  /* text-decoration: underline; */
   text-decoration-color: rgba(45, 58, 83, 0.8);
+  margin: 2px 0px 10px 0;
 }
 .contentPTag {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   font-size: 12px;
-  position: relative;
-  left: 8px;
-  bottom: 30px;
+  margin: 0;
+  height: 80px;
 }
 .postLikes {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
   font-size: 12px;
-  position: relative;
+  /* position: relative;
   left: 260px;
-  bottom: 20px;
+  bottom: 20px; */
 }
 .postbox > p {
   /* font-size: 16px; */
@@ -51,9 +65,6 @@
 .postbox > button {
   width: 50px;
 }
-/* .userdashboard {
-  height: 100vh;
-} */
 
 .upvote {
   background-color: #fff;
@@ -78,9 +89,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  position: relative;
-  bottom: 15px;
-  left: 270px;
 }
 .upvote:hover {
   background-color: #f3deff;
@@ -110,9 +118,6 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  position: relative;
-  bottom: 40px;
-  left: 200px;
 }
 .downvote:hover {
   background-color: #f3deff;
@@ -141,11 +146,22 @@
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  position: relative;
-  bottom: 65px;
-  left: 130px;
 }
 .delete:hover {
   background-color: #f3deff;
   color: #272727;
 }
+
+.personalPost {
+  margin-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+/* .userdashboard {
+  overflow-y: scroll;
+} */

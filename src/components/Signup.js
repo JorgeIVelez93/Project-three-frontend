@@ -71,8 +71,9 @@ const Signup = () => {
 
   return (
     <div className="signupmain">
-      <Navbar />
-
+      <div className="navbarcheat">
+        <Navbar />
+      </div>
       <div className="signupformbox">
         <form onSubmit={createUser} className="signupform">
           {imgUrl ? (

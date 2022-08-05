@@ -31,7 +31,7 @@ const ViewPosts = () => {
   return (
     <div className="userdashboard">
       {posts &&
-        posts.slice(0, 3).map(function (post) {
+        posts.slice(0, 4).map(function (post) {
           return (
             <div className="postbox">
               <p className="userPTag">
@@ -42,33 +42,38 @@ const ViewPosts = () => {
                   className="postprofilepic"
                 />
                 {username}: {Date(post.createdAt).slice(0, 15)}
+                <br></br>Likes: {post.likes.length}
               </p>
-              <p className="contentPTag">{post.content}</p>
-              <p className="postLikes">Up Votes {post.likes.length}</p>
-              <button
-                className="upvote"
-                onClick={() => {
-                  addLike(post._id);
-                }}
-              >
-                Upvote
-              </button>
-              <button
-                className="downvote"
-                onClick={() => {
-                  removeLike(post._id);
-                }}
-              >
-                Downvote
-              </button>
-              <button
-                className="delete"
-                onClick={() => {
-                  deletePost(post._id);
-                }}
-              >
-                Delete
-              </button>
+              <p className="contentPTag">
+                {post.content} <br></br>
+              </p>
+              <div className="buttons">
+                <button
+                  className="upvote"
+                  onClick={() => {
+                    addLike(post._id);
+                  }}
+                >
+                  Upvote
+                </button>
+                <button
+                  className="downvote"
+                  onClick={() => {
+                    removeLike(post._id);
+                  }}
+                >
+                  Downvote
+                </button>
+                <button
+                  className="delete"
+                  onClick={() => {
+                    deletePost(post._id);
+                  }}
+                >
+                  Delete
+                </button>
+              </div>
+              {/* <p className="postLikes">Up Votes {post.likes.length}</p> */}
             </div>
           );
         })}

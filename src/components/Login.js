@@ -41,7 +41,9 @@ const Login = () => {
 
   return (
     <div className="logincss">
-      <Navbar />
+      <div className="navcheat">
+        <Navbar />
+      </div>
       <form onSubmit={userLogin} className="login">
         <img src={logo} alt="company logos" className="loginlogo" />
         <label>Username</label>

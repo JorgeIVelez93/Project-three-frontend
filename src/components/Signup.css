@@ -30,6 +30,8 @@
   width: 500px;
   color: #fff;
   padding: 10px 0;
+  position: relative;
+  top: 150px;
 }
 
 .signupform > img {
@@ -197,4 +199,9 @@
 .signuplogo {
   width: 200px;
   height: 100px;
+}
+.navbarcheat {
+  width: 100vw;
+  position: fixed;
+  top: 0vh;
 }

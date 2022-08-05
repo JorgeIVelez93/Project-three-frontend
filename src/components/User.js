@@ -52,20 +52,19 @@ const User = () => {
         <div className="newssection">
           <h2>News</h2>
           {events.data &&
-            events.data.slice(0, 5).map(function (news) {
+            events.data.slice(0, 4).map(function (news) {
               return (
                 <div
                   className="news"
-                  style={{
-                    backgroundImage: `url(${news.image.url})`,
-                    backgroundSize: "cover",
-                    position: "0",
-                  }}
+                  // style={{
+                  //   backgroundImage: `url(${news.image.url})`,
+                  //   backgroundSize: "cover",
+                  //   position: "0",
+                  // }}
                 >
                   <a
                     style={{
-                      textDecoration: "none",
-                      color: "blue",
+                      color: "rgba(45, 58, 83, 1)",
                       textAlign: "center",
                     }}
                     href={news.url}
@@ -76,9 +75,6 @@ const User = () => {
               );
             })}
         </div>
-      </div>
-      <div className="footerUser">
-        <Footer />
       </div>
     </div>
   );

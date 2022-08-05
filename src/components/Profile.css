@@ -1,18 +1,26 @@
 .profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid rgba(45, 58, 83, 1);
   background-color: rgba(45, 58, 83, 1);
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   border-radius: 5px;
-  width: 500px;
-  height: 450px;
-  position: relative;
-  top: 85px;
+  width: 400px;
+  height: 400px;
+  /* position: relative;
+  top: 85px; */
+  color: #fff;
+  margin-top: 210px;
+  font-family: "Pangolin", cursive;
 }
 .profileContainer img {
-  width: 150px;
-  height: 150px;
+  width: 90px;
+  height: 90px;
+  margin: 1vh 1vw;
   border-radius: 50%;
-  border: 1px solid #e6e3d3;
+  border: 2px solid #e6e3d3;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .profilediv {
@@ -25,4 +33,32 @@
   background-image: url("../images/everglades.jpg");
   background-size: cover;
   height: 100vh;
+}
+.deleteButton {
+  background-color: #fff;
+  border: 0 solid #e2e8f0;
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  color: #0d172a;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Pangolin", cursive;
+  font-size: 0.55rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none #0d172a solid;
+  text-decoration-thickness: auto;
+  transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 11px;
+  margin-top: 10px;
+}
+.deleteButton:hover {
+  background-color: #f3deff;
+  color: #272727;
 }

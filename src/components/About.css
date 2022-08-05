@@ -1,0 +1,17 @@
+.aboutDiv {
+  background-color: #e6e3d3;
+  /* height: 100%; */
+  font-family: "Pangolin", cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: -2px;
+}
+.aboutDiv h1 {
+  margin: 0;
+}
+.LinkAbout {
+  /* margin-top: 10px; */
+  color: rgba(45, 58, 83, 1);
+}

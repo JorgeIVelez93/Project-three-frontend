@@ -3,6 +3,7 @@ import { get } from "../services/service";
 import { post } from "../services/service";
 import Navbar from "./Navbar";
 import viewAllPostsCss from "./ViewAllPosts.css";
+import evergreen from "../images/icons8-evergreen-75.png";
 
 const ViewAllPosts = () => {
   const [posts, setPosts] = React.useState([]);
@@ -38,32 +39,51 @@ const ViewAllPosts = () => {
                 <div className="allPostsBox">
                   <p className="allUserPTag">
                     {" "}
-                    <img
-                      src={profilePic}
+                    {post?.creatorId?.profilePic ? (
+                      <img
+                        src={post?.creatorId?.profilePic}
+                        alt="profile pic"
+                        className="allPostsProfilePic"
+                      />
+                    ) : (
+                      <img
+                        src={evergreen}
+                        alt="profile pic"
+                        className="allPostsProfilePic"
+                      />
+                    )}
+                    {/* <img
+                      src={post?.creatorId?.profilePic}
                       alt="profile pic"
                       className="allPostsProfilePic"
-                    />
-                    {username} {Date(post.createdAt).slice(0, 15)}
+                    /> */}
+                    {post?.creatorId?.username}{" "}
+                    {Date(post.createdAt).slice(0, 15)} <br></br> Likes{" "}
+                    {post.likes.length}
                   </p>
-                  <p className="allContentPTag">{post.content}</p>
+                  <p className="allContentPTag">
+                    {post.content} <br></br>
+                  </p>
 
-                  <p className="allPostLikes">Likes {post.likes.length}</p>
-                  <button
-                    className="allUpvote"
-                    onClick={() => {
-                      addLike(post._id);
-                    }}
-                  >
-                    Upvote
-                  </button>
-                  <button
-                    className="allDownvote"
-                    onClick={() => {
-                      removeLike(post._id);
-                    }}
-                  >
-                    Downvote
-                  </button>
+                  {/* <p className="allPostLikes">Likes {post.likes.length}</p> */}
+                  <div>
+                    <button
+                      className="allUpvote"
+                      onClick={() => {
+                        addLike(post._id);
+                      }}
+                    >
+                      Upvote
+                    </button>
+                    <button
+                      className="allDownvote"
+                      onClick={() => {
+                        removeLike(post._id);
+                      }}
+                    >
+                      Downvote
+                    </button>
+                  </div>
                 </div>
               );
             })}

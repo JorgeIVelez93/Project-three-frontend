@@ -3,6 +3,7 @@ import { fallDown as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
 import logo from "../images/Park Pals-logos_white.png";
 import { useNavigate } from "react-router-dom";
+import evergreen from "../images/icons8-evergreen-75.png";
 
 const Hamburger = () => {
   const username = localStorage.getItem("username");
@@ -45,10 +46,10 @@ const Hamburger = () => {
     },
     bmMenuWrap: {
       position: "fixed",
-      left: "80px",
+      left: "75px",
       top: "0px",
       height: "100%",
-      background: "rgba(157, 193, 131, .5)",
+      background: "rgba(45, 58, 83, 1)",
       color: "e6e3d3",
     },
     bmMenu: {
@@ -74,7 +75,33 @@ const Hamburger = () => {
   };
   return (
     <Menu styles={styles}>
-      <img
+      {profilePic ? (
+        <img
+          style={{
+            width: "100px",
+            height: "100px",
+            borderRadius: "50%",
+            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+            border: "2px solid #E6E3D3",
+          }}
+          src={profilePic}
+          alt="profile"
+        />
+      ) : (
+        <img
+          style={{
+            width: "100px",
+            height: "100px",
+            borderRadius: "50%",
+            boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+            border: "2px solid #E6E3D3",
+          }}
+          src={evergreen}
+          alt="profile"
+          style={{ width: "75px", height: "75px" }}
+        />
+      )}
+      {/* <img
         src={profilePic}
         alt="profile pic"
         style={{
@@ -82,26 +109,30 @@ const Hamburger = () => {
           height: "100px",
           borderRadius: "50%",
           boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+          border: "2px solid #fff",
         }}
-      />
+      /> */}
       <br></br>
-      <Link to="" className="burgerLinks">
+      <Link to="/profile" className="burgerLinks">
         {username}
       </Link>
       <br></br>
       <Link to={`/user/${username}`} className="burgerLinks">
         Dashboard
       </Link>
+      <br></br>
+      <Link to="/view-all" className="burgerLinks">
+        Global Pens
+      </Link>
+      <br></br>
       <Link to="/parks" className="burgerLinks">
-        View Parks
+        Parks
+      </Link>
+      <br></br>
+      <Link to="/about" className="burgerLinks">
+        About
       </Link>
 
-      <Link to="/view-all" className="burgerLinks">
-        View Global Pens
-      </Link>
-      <Link to="#" onClick={showSettings} className="burgerLinks">
-        Settings
-      </Link>
       <br></br>
       {username && (
         <Link to="/login" onClick={userSignout} className="burgerLinks">
